@@ -157,11 +157,7 @@ public class Main {
 	}
 	
 	public static int largestDifference(int[] arr) {
-		int res = 0;
-		for (int i : arr)
-			for (int j : arr)
-				res = Math.max(res, Math.abs(i - j));
-		return res;
+		return max(arr) - min(arr);
 	}
 	
 	public static Set<Integer> longestSequence(int[] arr) {
