@@ -143,17 +143,17 @@ public class Main {
 	}
 
 	public static boolean isPalindrome(String s) {
-        return (s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "")).equals(new StringBuilder(s).reverse().toString());
+		return (s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "")).equals(new StringBuilder(s).reverse().toString());
 	}
 
 	public static boolean isAnagram(String a, String b) {
-        if ((a = a.toLowerCase().replaceAll("[^a-zA-Z0-9]", "")).length() != (b = b.toLowerCase().replaceAll("\\s", "")).length())
-            return false;
-        char[] aArr = a.toCharArray();
-        char[] bArr = b.toCharArray();
-        Arrays.sort(aArr);
-        Arrays.sort(bArr);
-        return Arrays.equals(aArr, bArr);
+		if ((a = a.toLowerCase().replaceAll("[^a-zA-Z0-9]", "")).length() != (b = b.toLowerCase().replaceAll("\\s", "")).length())
+			return false;
+		char[] aArr = a.toCharArray();
+		char[] bArr = b.toCharArray();
+		Arrays.sort(aArr);
+		Arrays.sort(bArr);
+		return Arrays.equals(aArr, bArr);
 	}
 	
 	public static int largestDifference(int[] arr) {
@@ -164,15 +164,15 @@ public class Main {
 		Set<Integer> longestSequence = new HashSet<>();
 		Set<Integer> sequence;
 		for (int i = 0; i < arr.length;) {
-        	sequence = new HashSet<>();
-	        do {
-        		sequence.add(arr[i]);
-        		i++;
-	        } while(i > 0 && i < arr.length - 1 && arr[i] > arr[i - 1]);
+			sequence = new HashSet<>();
+			do {
+				sequence.add(arr[i]);
+				i++;
+			} while(i > 0 && i < arr.length - 1 && arr[i] > arr[i - 1]);
 			if (sequence.size() > longestSequence.size())
 				longestSequence = sequence;
 		}
-        return longestSequence;
+		return longestSequence;
 	}
 
 	public static int max(int[] arr) {
@@ -185,12 +185,12 @@ public class Main {
 
 	public static Set<Object> equalElements(Object[] a, Object[] b) {
 		Set<Object> set = new HashSet<>();
-        for (int i = 0; i < a.length; i++)
-        	for (int j = 0; j < b.length; j++) {
-        		if (a[i].equals(b[j])) {
-        			set.add(a[i]);
-        		}
-        	}
-        return set;
+		for (int i = 0; i < a.length; i++)
+			for (int j = 0; j < b.length; j++) {
+				if (a[i].equals(b[j])) {
+					set.add(a[i]);
+				}
+			}
+		return set;
 	}
 }
