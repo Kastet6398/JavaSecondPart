@@ -1,17 +1,11 @@
-import java.util.Arrays;
-
-class Main {
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(search(new int[]{1, 2, 2, 2, 3, 4, 4, 4, 5, 6}, 4)));
-        System.out.println(multiply("32", "834"));
-        System.out.println(myPow(10, 2));
-    }
+public class Main {
 
     /**
      * <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Find First and Last Position of Element in Sorted Array</a>
      */
     public static int[] search(int[] nums, int target) {
         int[] res = {-1, -1};
+        if (nums == null || nums.length == 0) return res;
 
         int left = 0;
         int high = nums.length;
@@ -24,12 +18,12 @@ class Main {
 
         if (left == nums.length || nums[left] != target)
             return res;
+        res[0] = res[1] = left;
         for (int i = left; i < nums.length; i++)
             if (nums[i] == target)
                 res[1] = i;
             else break;
 
-        res[0] = left;
 
         return res;
     }
@@ -38,7 +32,7 @@ class Main {
      * <a href="https://leetcode.com/problems/multiply-strings/">Multiply strings</a>
      */
     public static String multiply(String num1, String num2) {
-        if ("0".equals(num1) || "0".equals(num2))
+        if (num1 == null || num2 == null || "0".equals(num1) || "0".equals(num2) || num1.isEmpty() || num2.isEmpty() || !num1.matches("[0-9]+") || !num2.matches("[0-9]+") || (num1.startsWith("0") && num1.length() > 1) || (num2.startsWith("0") && num2.length() > 1))
             return "0";
         if ("1".equals(num1))
             return num2;
@@ -68,10 +62,11 @@ class Main {
      */
     public static double myPow(double x, int n) {
         if (n == 0) return 1;
+        if (x == 0) return 0;
 
         if (n == Integer.MIN_VALUE) {
             x = x * x;
-            n = n / 2;
+            n /= 2;
         }
 
         if (n < 0) {
@@ -81,21 +76,10 @@ class Main {
 
         double result = 1;
 
-        for (; n > n / 2; n = n / 2, x = x * x) {
-            if (n % 2 == 1) {
+        for (; n > n / 2; n /= 2, x *= x)
+            if (n % 2 == 1)
                 result *= x;
-            }
-        }
 
         return result;
-    }
-
-    /**
-     * <a href="https://leetcode.com/problems/powx-n/">Pow(x, n)</a>
-     * <p>
-     * Simpler, but using Math.pow()...
-     */
-    public static double myPow2(double x, int n) {
-        return Math.pow(x, n);
     }
 }
