@@ -1,8 +1,8 @@
 package views;
 
+import listeners.ExitListener;
+
 import javax.swing.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 public abstract class BaseScreen extends JFrame {
     protected abstract void initComponents();
@@ -10,11 +10,7 @@ public abstract class BaseScreen extends JFrame {
         setTitle("Main Screen");
         setSize(600, 400);
         setLocationRelativeTo(null);
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent evt) {
-                System.exit(0);
-            }
-        });
+        addWindowListener(new ExitListener());
         initComponents();
         setVisible(true);
     }
