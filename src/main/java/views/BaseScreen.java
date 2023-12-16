@@ -6,6 +6,8 @@ import javax.swing.*;
 
 public abstract class BaseScreen extends JFrame {
     protected abstract void initComponents();
+    protected abstract void onState(int state);
+
     public BaseScreen() {
         setTitle("Main Screen");
         setSize(600, 400);
