@@ -29,8 +29,6 @@ public class Main {
         account2.deposit(400.0);
         account3.takeInCredit(300);
 
-        System.out.println(new Date(0, 0, 0, 0).compareTo(new Date(10, 10, 10, 10)) == 0);
-        new Date(10, 0, 0, 0).waitDate((Object... args2) -> System.out.println(args2[0]), "ddd");
         account1.displayAccountInfo();
         System.out.println();
         account2.displayAccountInfo();
