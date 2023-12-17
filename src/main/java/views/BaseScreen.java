@@ -6,7 +6,6 @@ import listeners.ExitListener;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
-import java.awt.event.WindowEvent;
 import java.util.Objects;
 
 public abstract class BaseScreen extends JFrame {
@@ -52,6 +51,6 @@ public abstract class BaseScreen extends JFrame {
     }
 
     public void stop() {
-        dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        dispose();
     }
 }
