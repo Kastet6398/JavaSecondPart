@@ -10,6 +10,7 @@ public final class BankAccount {
     private double creditLimit;
     private double mustReturn;
     private Date mustReturnDate;
+    // currency is the example of Strategy pattern: we don't use a concrete currency, like USD, UAH, but BaseCurrency
     private BaseCurrency currency;
 
     public UserType getOwner() {
