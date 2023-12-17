@@ -1,21 +1,21 @@
 package controllers;
 
 import actions.Actions;
-import models.MainModel;
-import models.MainModel2;
+import models.MainModelChangeText;
+import models.MainModelToUppercase;
 import views.MainScreen;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 
 public class MainController extends BaseController {
-    private final MainModel model;
-    private final MainModel2 model2;
+    private final MainModelChangeText model;
+    private final MainModelToUppercase model2;
 
     public MainController() {
         screen = new MainScreen(this);
-        model = new MainModel(screen);
-        model2 = new MainModel2(screen);
+        model = new MainModelChangeText(screen);
+        model2 = new MainModelToUppercase(screen);
     }
 
     @Override

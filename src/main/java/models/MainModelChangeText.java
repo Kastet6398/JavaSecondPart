@@ -5,8 +5,8 @@ import views.BaseScreen;
 
 import javax.swing.*;
 
-public final class MainModel extends BaseModel {
-    public MainModel(BaseScreen screen) {
+public final class MainModelChangeText extends BaseModel {
+    public MainModelChangeText(BaseScreen screen) {
         super(screen);
     }
     @Override

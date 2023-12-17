@@ -5,8 +5,8 @@ import views.BaseScreen;
 
 import javax.swing.*;
 
-public final class MainModel2 extends BaseModel {
-    public MainModel2(BaseScreen screen) {
+public final class MainModelToUppercase extends BaseModel {
+    public MainModelToUppercase(BaseScreen screen) {
         super(screen);
     }
     @Override
