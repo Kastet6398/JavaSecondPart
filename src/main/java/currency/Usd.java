@@ -1,7 +1,7 @@
 package currency;
 
 public final class Usd extends BaseCurrency {
-
+    // START singleton
     private static Usd instance;
 
     public static BaseCurrency getInstance() {
@@ -11,6 +11,7 @@ public final class Usd extends BaseCurrency {
         return instance;
     }
     private Usd() {}
+    // END singleton
     public String getCode() {
         return "USD";
     }
