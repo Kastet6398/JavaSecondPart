@@ -9,6 +9,7 @@ public final class MainModelToUppercase extends BaseModel {
     public MainModelToUppercase(BaseScreen screen) {
         super(screen);
     }
+
     @Override
     public void execute() {
         JLabel label = new JLabel("MODEL2");

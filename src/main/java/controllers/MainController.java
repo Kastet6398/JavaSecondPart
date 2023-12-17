@@ -29,6 +29,8 @@ public class MainController extends BaseController {
                     model2.execute();
                     break;
             }
-        } catch (IllegalArgumentException ignored) {}
+        } catch (IllegalArgumentException exception) {
+            System.err.println("Error! " + exception.getMessage());
+        }
     }
 }
