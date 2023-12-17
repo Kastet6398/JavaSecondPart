@@ -37,15 +37,15 @@ public abstract class BaseScreen extends JFrame {
     }
 
     public Component getComponentByName(String name) {
-        return this.getComponent(getContentPane(), name);
+        return this.getComponentByName(getContentPane(), name);
     }
 
-    private Component getComponent(Container container, String name) {
+    private Component getComponentByName(Container container, String name) {
         for (Component c : container.getComponents()) {
             if (Objects.equals(c.getName(), name))
                 return c;
             if (c instanceof Panel container1)
-                return getComponent(container1, name);
+                return getComponentByName(container1, name);
         }
         return null;
     }
