@@ -1,7 +1,8 @@
-import views.MainScreen;
+import controllers.MainController;
 
 public class Main {
     public static void main(String[] args) {
-        new MainScreen();
+        MainController c = new MainController();
+        c.start();
     }
 }

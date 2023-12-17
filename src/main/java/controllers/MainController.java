@@ -1,23 +1,34 @@
 package controllers;
 
-import views.BaseScreen;
+import actions.Actions;
+import models.MainModel;
+import models.MainModel2;
 import views.MainScreen;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.event.MouseEvent;
 
-public class MainController implements ActionListener {
-    private BaseScreen screen;
+public class MainController extends BaseController {
+    private final MainModel model;
+    private final MainModel2 model2;
+
     public MainController() {
-        System.out.println("MainController");
-    }
-
-    public void createView() {
         screen = new MainScreen(this);
+        model = new MainModel(screen);
+        model2 = new MainModel2(screen);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("MainController actionPerformed");
+    public void mouseClicked(MouseEvent e) {
+        try {
+            switch (Actions.valueOf(((JComponent) e.getSource()).getName())) {
+                case CHANGE_TEXT:
+                    model.execute();
+                    break;
+                case TO_UPPERCASE:
+                    model2.execute();
+                    break;
+            }
+        } catch (IllegalArgumentException ignored) {}
     }
 }

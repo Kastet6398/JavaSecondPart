@@ -1,13 +1,16 @@
 package models;
 
+import actions.Actions;
 import views.BaseScreen;
 
-public class MainModel {
-    private final BaseScreen screen;
+import javax.swing.*;
+
+public final class MainModel extends BaseModel {
     public MainModel(BaseScreen screen) {
-        this.screen = screen;
+        super(screen);
     }
-    public void changeName() {
-        System.out.println("Hello");
+    @Override
+    public void execute() {
+        ((JButton) screen.getComponentByName(Actions.CHANGE_TEXT.name())).setText("new!!!");
     }
 }
