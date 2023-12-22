@@ -1,18 +1,19 @@
 package models;
 
-import enums.Actions;
+import enums.Names;
+import tools.Calculator;
 import views.BaseScreen;
 
 import javax.swing.*;
-
-public final class MainModelChangeText extends BaseModel {
-    public MainModelChangeText(BaseScreen screen) {
+public final class MainModelCalculate extends BaseModel {
+    public MainModelCalculate(BaseScreen screen) {
         super(screen);
     }
 
     @Override
     public void execute() {
-        JButton button = (JButton) screen.getComponentByName(Actions.CHANGE_TEXT.name());
-        button.setText("new!!!");
+        String expression = ((JTextField) screen.getComponentByName(Names.TEXT_FIELD.name())).getText();
+        String result = Calculator.calculate(expression);
+        ((JTextField) screen.getComponentByName(Names.RESULT.name())).setText(result);
     }
 }

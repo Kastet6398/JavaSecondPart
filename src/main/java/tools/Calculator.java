@@ -1,7 +1,13 @@
-import net.objecthunter.exp4j.ExpressionBuilder;
+package tools;
+
+import com.ezylang.evalex.Expression;
 
 public class Calculator {
-    public static double calculate(String expression) {
-        return new ExpressionBuilder(expression).build().evaluate();
+    public static String calculate(String expression) {
+        try {
+            return new Expression(expression).evaluate().getStringValue();
+        } catch (Exception e) {
+            return "ERROR";
+        }
     }
 }

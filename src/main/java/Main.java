@@ -7,5 +7,7 @@ public class Main {
 
         // To close the window programmatically, use this:
         // c.stop();
+        // or in controller:
+        // screen.stop();
     }
 }

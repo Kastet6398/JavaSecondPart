@@ -13,8 +13,6 @@ public final class MainModelClear extends BaseModel {
 
     @Override
     public void execute() {
-        String expression = ((JTextField) screen.getComponentByName(Names.TEXT_FIELD.name())).getText();
-        String result = Calculator.calculate(expression);
-        ((JLabel) screen.getComponentByName(Names.RESULT.name())).setText(result);
+        ((JTextField) screen.getComponentByName(Names.TEXT_FIELD.name())).setText("");
     }
 }

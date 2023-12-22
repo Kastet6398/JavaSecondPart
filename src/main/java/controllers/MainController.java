@@ -1,36 +1,39 @@
 package controllers;
 
-import actions.Actions;
-import models.MainModelChangeText;
-import models.MainModelToUppercase;
+import enums.Names;
+import models.*;
 import views.MainScreen;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
+import java.util.Objects;
 
 public class MainController extends BaseController {
-    private final MainModelChangeText model;
-    private final MainModelToUppercase model2;
+    private final BaseModel model;
+    private final BaseModel model2;
+    private final BaseModel model3;
+    private final BaseModel model4;
 
     public MainController() {
         screen = new MainScreen(this);
-        model = new MainModelChangeText(screen);
-        model2 = new MainModelToUppercase(screen);
+        model = new MainModelCalculate(screen);
+        model2 = new MainModelClear(screen);
+        model3 = new MainModelInsert(screen);
+        model4 = new MainModelBack(screen);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        try {
-            switch (Actions.valueOf(((JComponent) e.getSource()).getName())) {
-                case CHANGE_TEXT:
-                    model.execute();
-                    break;
-                case TO_UPPERCASE:
-                    model2.execute();
-                    break;
-            }
-        } catch (IllegalArgumentException exception) {
-            System.err.println("Error! " + exception.getMessage());
+        String name = ((JComponent) e.getSource()).getName();
+        if (Objects.equals(name, Names.CALCULATE.name()))
+            model.execute();
+        else if (Objects.equals(name, Names.CLEAR.name()))
+            model2.execute();
+        else if (Objects.equals(name, Names.BACK.name()))
+            model4.execute();
+        else if (name.startsWith("ins")) {
+            model3.setArg(name.substring(3));
+            model3.execute();
         }
     }
 }

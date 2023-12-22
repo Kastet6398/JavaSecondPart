@@ -1,4 +1,5 @@
 package enums;
 
-public class Names {
+public enum Names {
+    TEXT_FIELD, CALCULATE, RESULT, CLEAR, BACK
 }
