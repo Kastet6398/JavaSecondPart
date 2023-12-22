@@ -1,6 +1,6 @@
 package models;
 
-import actions.Actions;
+import enums.Actions;
 import views.BaseScreen;
 
 import javax.swing.*;
