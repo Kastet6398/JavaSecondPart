@@ -2,10 +2,7 @@ package controllers;
 
 import views.BaseScreen;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseAdapter;
-public abstract class BaseController extends MouseAdapter {
+public abstract class BaseController {
     protected BaseScreen screen;
     public BaseScreen getScreen() {
         return screen;

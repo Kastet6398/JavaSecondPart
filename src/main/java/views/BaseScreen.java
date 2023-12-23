@@ -8,6 +8,11 @@ import java.util.Objects;
 
 public abstract class BaseScreen extends JFrame {
     protected final BaseController controller;
+
+    public BaseController getController() {
+        return controller;
+    }
+
     protected abstract void initComponents();
     public BaseScreen(BaseController controller) {
         this.controller = controller;

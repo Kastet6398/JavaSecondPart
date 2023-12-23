@@ -2,20 +2,20 @@ package controllers;
 
 import actions.Actions;
 import models.BaseModel;
-import models.SecondModel1;
+import models.SecondModelChangeColorToGreen;
 import views.SecondScreen;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Objects;
 
-public class SecondController extends BaseController {
+public class SecondController extends BaseController implements MouseListener {
     private final BaseModel model;
 
-    public SecondController(Object arg) {
+    public SecondController(BaseController controller) {
         screen = new SecondScreen(this);
-        model = new SecondModel1(screen);
-        model.setArg(arg);
+        model = new SecondModelChangeColorToGreen(controller.getScreen());
     }
 
 
@@ -25,4 +25,16 @@ public class SecondController extends BaseController {
             model.execute();
         }
     }
+
+    @Override
+    public void mousePressed(MouseEvent e) {}
+
+    @Override
+    public void mouseReleased(MouseEvent e) {}
+
+    @Override
+    public void mouseEntered(MouseEvent e) {}
+
+    @Override
+    public void mouseExited(MouseEvent e) {}
 }

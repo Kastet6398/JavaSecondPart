@@ -3,12 +3,11 @@ package models;
 import actions.Actions;
 import views.BaseScreen;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class MainModel2 extends BaseModel{
+public class SecondModelChangeColorToGreen extends BaseModel{
 
-    public MainModel2(BaseScreen screen) {
+    public SecondModelChangeColorToGreen(BaseScreen screen) {
         super(screen);
     }
 
