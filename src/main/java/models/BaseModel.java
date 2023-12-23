@@ -10,9 +10,14 @@ public abstract class BaseModel {
      * A screen (view) that should be controlled.
      */
     protected final BaseScreen screen;
+    protected Object arg;
 
     public BaseModel(BaseScreen screen) {
         this.screen = screen;
+    }
+
+    public void setArg(Object arg) {
+        this.arg = arg;
     }
 
     /**

@@ -1,5 +1,6 @@
 package views;
 
+import actions.Actions;
 import controllers.BaseController;
 
 import javax.swing.*;
@@ -13,8 +14,9 @@ public final class SecondScreen extends BaseScreen {
     @Override
     protected void initComponents() {
         setLayout(null);
-        JLabel button = new JLabel("open");
+        JButton button = new JButton("change");
         button.setBounds(100, 100, 200, 50);
+        button.addMouseListener(controller);
         add(button);
     }
 }

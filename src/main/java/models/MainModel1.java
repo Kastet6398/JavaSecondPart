@@ -10,6 +10,6 @@ public final class MainModel1 extends BaseModel {
 
     @Override
     public void execute() {
-        new SecondController();
+        new SecondController(arg);
     }
 }
