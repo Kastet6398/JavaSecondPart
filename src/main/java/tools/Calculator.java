@@ -9,6 +9,10 @@ public final class Calculator {
         License.iConfirmNonCommercialUse("ADDEWFIEWJFWNE");
     }
 
+    private Calculator() {
+        throw new RuntimeException("This class is not supposed to be instantiated");
+    }
+
     public static String calculate(String expression) {
         Expression expression1 = new Expression(expression, new Function("print", new Print()));
         if (!(expression1.checkSyntax() || expression1.checkLexSyntax())) {
@@ -17,7 +21,7 @@ public final class Calculator {
         return "" + expression1.calculate();
     }
 
-    static class Print implements FunctionExtensionVariadic {
+    private static final class Print implements FunctionExtensionVariadic {
         @Serial
         private static final long serialVersionUID = -1825198737392316170L;
 
