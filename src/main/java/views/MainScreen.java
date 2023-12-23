@@ -18,7 +18,7 @@ public final class MainScreen extends BaseScreen {
     protected void initComponents() {
         setLayout(null);
         JTextField textField = new JTextField();
-        textField.setName(Names.TEXT_FIELD.name());
+        textField.setName(Names.EXPRESSION_FIELD.name());
         textField.setFont(font);
         textField.setBounds(0, 0, 720, 50);
         add(textField);
@@ -31,24 +31,23 @@ public final class MainScreen extends BaseScreen {
 
         createButton("+", 240, 50);
         createButton("-", 240, 130);
-        createButton("*", 240, 210);
-        createButton("/", 240, 290);
-        createButton("sqrt", "inssqrt()", 240, 370);
+        createButton("×", 240, 210);
+        createButton("÷", 240, 290);
+        createButton("√", "ins√()", 240, 370);
 
-        createButton("e", 320, 50);
-        createButton("pi", 320, 130);
+        createButton("ℯ", 320, 50);
+        createButton("π", 320, 130);
         createButton(">", 320, 210);
         createButton("<", 320, 290);
         createButton("==", 320, 370);
 
         createButton("!", 400, 50);
-        createButton("!=", 400, 130);
-        createButton(">=", 400, 210);
-        createButton("<=", 400, 290);
-        createButton("\"", 400, 370);
+        createButton("≠", 400, 130);
+        createButton("≥", 400, 210);
+        createButton("≤", 400, 290);
+        createButton("∛", "ins∛()", 400, 370);
 
         createButton("&&", 480, 50);
-        createButton("||", 480, 130);
         createButton("||", 480, 130);
         createButton("sin", "inssin()", 480, 210);
         createButton("cos", "inscos()", 480, 290);
@@ -81,7 +80,7 @@ public final class MainScreen extends BaseScreen {
         result.setFont(new Font("Arial", Font.BOLD, 16));
         result.setCursor(new Cursor(Cursor.TEXT_CURSOR));
         result.setEditable(false);
-        result.setName(Names.RESULT.name());
+        result.setName(Names.RESULT_FIELD.name());
         result.setBounds(0, 450, 720, 80);
         add(result);
         setResizable(false);

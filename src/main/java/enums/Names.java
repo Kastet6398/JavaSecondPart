@@ -1,5 +1,5 @@
 package enums;
 
 public enum Names {
-    TEXT_FIELD, CALCULATE, RESULT, CLEAR, BACK
+    EXPRESSION_FIELD, CALCULATE, RESULT_FIELD, CLEAR, BACK
 }

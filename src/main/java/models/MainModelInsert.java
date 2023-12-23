@@ -14,7 +14,7 @@ public final class MainModelInsert extends BaseModel {
 
     @Override
     public void execute() {
-        JTextField textField = (JTextField) screen.getComponentByName(Names.TEXT_FIELD.name());
+        JTextField textField = (JTextField) screen.getComponentByName(Names.EXPRESSION_FIELD.name());
         textField.requestFocus();
 
         try {

@@ -5,6 +5,7 @@ import tools.Calculator;
 import views.BaseScreen;
 
 import javax.swing.*;
+
 public final class MainModelCalculate extends BaseModel {
     public MainModelCalculate(BaseScreen screen) {
         super(screen);
@@ -12,8 +13,14 @@ public final class MainModelCalculate extends BaseModel {
 
     @Override
     public void execute() {
-        String expression = ((JTextField) screen.getComponentByName(Names.TEXT_FIELD.name())).getText();
+        JTextField expressionField = (JTextField) screen.getComponentByName(Names.EXPRESSION_FIELD.name());
+        JTextField resultField = (JTextField) screen.getComponentByName(Names.RESULT_FIELD.name());
+
+        String expression = expressionField.getText();
         String result = Calculator.calculate(expression);
-        ((JTextField) screen.getComponentByName(Names.RESULT.name())).setText(result);
+
+        expressionField.requestFocus();
+        resultField.setText(result);
+        resultField.setCaretPosition(0);
     }
 }

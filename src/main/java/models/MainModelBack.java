@@ -13,7 +13,7 @@ public class MainModelBack extends BaseModel {
 
     @Override
     public void execute() {
-        JTextField textField = (JTextField) screen.getComponentByName(Names.TEXT_FIELD.name());
+        JTextField textField = (JTextField) screen.getComponentByName(Names.EXPRESSION_FIELD.name());
         try {
             textField.getDocument().remove(textField.getCaretPosition() - 1, 1);
         } catch (StringIndexOutOfBoundsException | BadLocationException ignored) {
