@@ -1,10 +1,10 @@
 package controllers;
 
-import views.BaseScreen;
+import views.BaseView;
 
 public abstract class BaseController {
-    protected BaseScreen screen;
-    public BaseScreen getScreen() {
-        return screen;
+    protected BaseView view;
+    public BaseView getView() {
+        return view;
     }
 }

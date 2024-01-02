@@ -1,11 +1,11 @@
 package controllers;
 
-import actions.Actions;
+import actions.Names;
 import models.BaseModel;
-import models.SecondModelChangeColorToGreen;
-import views.SecondScreen;
+import models.StepAndSwitchModel;
+import views.SecondView;
 
-import javax.swing.JComponent;
+import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Objects;
@@ -14,15 +14,16 @@ public class SecondController extends BaseController implements MouseListener {
     private final BaseModel model;
 
     public SecondController(BaseController controller) {
-        screen = new SecondScreen(this);
-        model = new SecondModelChangeColorToGreen(controller.getScreen());
+        view = new SecondView(this);
+        model = new StepAndSwitchModel(controller.getView());
     }
 
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-        if (Objects.equals(((JComponent) e.getSource()).getName(), Actions.CHANGE_COLOR.name())) {
-            model.execute();
+    public synchronized void mouseClicked(MouseEvent e) {
+        if (Objects.equals(((JComponent) e.getSource()).getName(), Names.BTN_MOVE.name())) {
+            Thread thread = new Thread(model::execute);
+            thread.start();
         }
     }
 

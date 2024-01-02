@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-public abstract class BaseScreen extends JFrame {
+public abstract class BaseView extends JFrame {
     protected final BaseController controller;
 
     public BaseController getController() {
@@ -14,7 +14,7 @@ public abstract class BaseScreen extends JFrame {
     }
 
     protected abstract void initComponents();
-    public BaseScreen(BaseController controller) {
+    public BaseView(BaseController controller) {
         this.controller = controller;
         setTitle("Main Screen");
         setSize(600, 400);

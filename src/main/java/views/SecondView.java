@@ -1,22 +1,22 @@
 package views;
 
-import actions.Actions;
+import actions.Names;
 import controllers.BaseController;
 
 import javax.swing.*;
 import java.awt.event.MouseListener;
 
-public final class MainScreen extends BaseScreen {
+public final class SecondView extends BaseView {
 
-    public MainScreen(BaseController controller) {
+    public SecondView(BaseController controller) {
         super(controller);
     }
 
     @Override
     protected void initComponents() {
         setLayout(null);
-        JButton button = new JButton("open");
-        button.setName(Actions.OPEN_WINDOW.name());
+        JButton button = new JButton("move");
+        button.setName(Names.BTN_MOVE.name());
         button.setBounds(100, 100, 200, 50);
         button.addMouseListener((MouseListener) controller);
         add(button);
