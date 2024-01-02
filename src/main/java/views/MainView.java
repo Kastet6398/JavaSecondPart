@@ -15,7 +15,7 @@ public final class MainView extends BaseView {
     @Override
     protected void initComponents() {
         setLayout(null);
-        JLabel picLabel = new JLabel(new ImageIcon(Tools.images.getFirst()));
+        JLabel picLabel = new JLabel(new ImageIcon(Tools.images.getLast()));
         picLabel.setName(Names.LBL_HERO.name());
         picLabel.setBounds(0, 0, Tools.images.getFirst().getWidth(), Tools.images.getFirst().getHeight());
         add(picLabel);
