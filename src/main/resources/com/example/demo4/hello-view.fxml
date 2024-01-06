@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo4.HelloController">
+    <center>
+        <Canvas style="
+-fx-border-color: black;
+-fx-border-width: 5;" width="1200" height="600" fx:id="canvas" onMouseReleased="#onMouseReleased" onMousePressed="#drag" onMouseDragged="#drag" />
+    </center>
+    <bottom>
+        <VBox alignment="CENTER" spacing="20.0">
+            <HBox>
+                <Label text="Pen color                        " />
+                <Label text="Background                       " />
+                <Label text="Pen size" />
+            </HBox>
+            <HBox>
+                <ColorPicker fx:id="color" />
+                <ColorPicker fx:id="background" />
+                <Spinner fx:id="spinner" />
+            </HBox>
+            <HBox>
+                <Button onMouseClicked="#save" text="Save" />
+                <Button onMouseClicked="#saveAs" text="Save As" />
+                <Button onMouseClicked="#open" text="Open" />
+                <Button onMouseClicked="#clear" text="Clear" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
