@@ -30,6 +30,11 @@ public class BackgroundThreadModel extends BaseModel {
                             long timestampSeconds = t.timestamp().getTime();
                             long currentSeconds = System.currentTimeMillis();
                             if (currentSeconds >= timestampSeconds) {
+                                try {
+                                    DatabaseConnection.setShown(t.id());
+                                } catch (SQLException e) {
+                                    throw new RuntimeException(e);
+                                }
                                 soundModel.execute();
                                 Platform.runLater(() -> {
                                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -43,11 +48,6 @@ public class BackgroundThreadModel extends BaseModel {
                                     alert.getDialogPane().setExpandableContent(expContent);
                                     alert.show();
                                 });
-                                try {
-                                    DatabaseConnection.setShown(t.id());
-                                } catch (SQLException e) {
-                                    throw new RuntimeException(e);
-                                }
                             }
                         }
                     }

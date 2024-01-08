@@ -18,7 +18,7 @@ public class EditModel extends BaseModel {
 
     public Object execute() {
         try {
-            DatabaseConnection.updateData(editor.getHtmlText(), id,null);
+            DatabaseConnection.updateData(editor.getHtmlText(), id);
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }

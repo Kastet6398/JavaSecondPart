@@ -80,18 +80,17 @@ WHERE id = ?
         }
     }
 
-    public static void updateData(String text, int id, Timestamp timestamp) throws SQLException {
+    public static void updateData(String text, int id) throws SQLException {
 
         try(PreparedStatement stmt = getConn().prepareStatement("""
 UPDATE tasks
-SET text = ?, timestamp = ?
+SET text = ?
 WHERE id = ?
 """)) {
             stmt.setString(1, text);
-            stmt.setTimestamp(2, timestamp);
-            stmt.setInt(3, id);
+            stmt.setInt(2, id);
             stmt.executeUpdate();
-            }
+        }
     }
 
     public static List<Task> retrieveData() throws SQLException {
@@ -104,7 +103,7 @@ WHERE id = ?
             while (rs.next()) {
                 tasks.add(new Task(rs.getString("text"), rs.getInt("id"), rs.getTimestamp("timestamp"), rs.getBoolean("is_shown")));
             }
-            return tasks;
+            return tasks.reversed();
         }
     }
 
