@@ -1,4 +1,4 @@
-package com.example.demo4;
+package com.example.demo4.records;
 
 import java.util.List;
 
