@@ -33,7 +33,7 @@
           <manifest>
             <addClasspath>true</addClasspath>
             <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>com.example.fff.Solution</mainClass>
+            <mainClass>com.example.fff.IntToRoman</mainClass>
           </manifest>
         </archive>
       </configuration>
