@@ -29,6 +29,5 @@ public class PersonModel implements BaseModel {
         this.age = age;
     }
 
-    // Implement any additional methods or overrides as needed
 }
 
