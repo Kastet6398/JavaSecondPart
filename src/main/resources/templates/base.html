@@ -4,6 +4,8 @@
     <title layout:fragment="title"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/js/base.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"  crossorigin="anonymous">
     <style>body{ min-height: 100vh!important; margin: 0; }
 body{ display: flex! important; flex-direction:column; }
@@ -14,7 +16,7 @@ body{ display: flex! important; flex-direction:column; }
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="/">My Website</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="https://chat.openai.com/navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,7 +35,7 @@ body{ display: flex! important; flex-direction:column; }
                     </li>
                 </ul>
                 <span class="navbar-text ms-auto">
-                    [[|Welcome${(person != null)? (', ' + person.name) : ''}!|]]
+                    Welcome<span id="nameSpan"></span>!
                 </span>
             </div>
         </div>
