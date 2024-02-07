@@ -55,11 +55,10 @@ public class Ebay {
                     driver.get(driver.findElement(By.className("pagination__next")).getAttribute("href"));
                     printSearchResults(driver);
                     System.out.println("To go to next page, type 'n'. Type 'q' to enter another search query.");
-                    System.out.print("> ");
                 } else {
                     System.out.println("Please enter a correct command. Use 'n' to view the next page or 'q' to enter another search query.");
-                    System.out.print("> ");
                 }
+                System.out.print("> ");
             }
             System.out.println("Enter a search query or 'q' to exit:");
             System.out.print("> ");
