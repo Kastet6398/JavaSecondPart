@@ -2,22 +2,18 @@ package org.example.utils;
 
 import java.sql.*;
 
-public class Dao extends BaseUtils {
+public class Dao {
     private Dao() {
-        super();
+        throw new AssertionError("Instantiation of utility class 'Dao'");
     }
 
     private static Connection connection;
 
-    public static void createTables(Connection connection) {
-        try {
-            connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name TEXT NOT NULL, telegramId BIGINT UNIQUE NOT NULL)");
-            connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS operations (id SERIAL PRIMARY KEY, text TEXT NOT NULL, telegramId BIGINT UNIQUE NOT NULL)");
-            connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS user_operations (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id), operation_id INTEGER REFERENCES operations(id))");
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public static void createTables(Connection connection) throws SQLException {
+        connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name TEXT NOT NULL, telegramId BIGINT UNIQUE NOT NULL)");
+        connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS operations (id SERIAL PRIMARY KEY, text TEXT NOT NULL, telegramId BIGINT UNIQUE NOT NULL)");
+        connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS user_operations (id SERIAL PRIMARY KEY, user_id INTEGER REFERENCES users(id), operation_id INTEGER REFERENCES operations(id))");
+
     }
 
     public static void createUser(Connection connection, String name, long telegramId) throws SQLException {
@@ -75,14 +71,10 @@ public class Dao extends BaseUtils {
 
     }
 
-    public static void createTables() {
-        try {
-            Connection connection = getConnection();
-            createTables(connection);
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public static void createTables() throws SQLException {
+        Connection connection = getConnection();
+        createTables(connection);
+        connection.close();
     }
 
     public static Connection getConnection() throws SQLException {
@@ -92,13 +84,9 @@ public class Dao extends BaseUtils {
         return connection;
     }
 
-    public static void closeConnection() {
-        try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public static void closeConnection() throws SQLException {
+        if (connection != null && !connection.isClosed()) {
+            connection.close();
         }
     }
 }

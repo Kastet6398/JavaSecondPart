@@ -12,9 +12,9 @@ import com.ezylang.evalex.parser.Token;
 
 import java.util.List;
 import java.util.Map;
-public class Utils extends BaseUtils {
+public class Utils {
     private Utils() {
-        super();
+        throw new AssertionError("Instantiation of utility class 'Utils'");
     }
 
     public static String calculate(String expression) {
