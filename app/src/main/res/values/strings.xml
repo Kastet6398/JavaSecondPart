@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">First Application</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result</string>
+    <string name="result_text">Result: %s</string>
+    <string name="tip_on_input">Enter an expression</string>
+    <string name="back">Back</string>
+</resources>
