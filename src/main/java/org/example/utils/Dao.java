@@ -79,7 +79,7 @@ public class Dao {
 
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
-            connection = DriverManager.getConnection(Constants.DB_URL);
+            connection = DriverManager.getConnection(Constants.DB_URL, Constants.DB_USR, Constants.DB_PASSWORD);
         }
         return connection;
     }

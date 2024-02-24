@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+
+      POSTGRES_PASSWORD: password
+
+    ports:
+      - "5433:5432"
+    networks:
+      - javaapp
+    hostname: db
+
+  javaapp:
+    image: javaapp
+    container_name: javaapp
+    depends_on:
+      - db
+    networks:
+      - javaapp
+
+
+networks:
+  javaapp:
+    driver: bridge
