@@ -1,0 +1,87 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="2bd1bce4-e6e7-32d0-9e93-961b0b50697d" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="AssertEqualsCalledOnArray" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="AssertEqualsMayBeAssertSame" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BooleanParameter" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BusyWait" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="ClassReferencesSubclass" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CustomRegExpInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myConfigurations">
+        <list>
+          <RegExpInspectionConfiguration>
+            <option name="description" value="Don't use AWT!!!" />
+            <option name="name" value="AWT" />
+            <option name="problemDescriptor" value="Don't use AWT!!!" />
+            <option name="suppressId" value="dontuseawt" />
+            <option name="uuid" value="fda78df6-e479-358f-b4c4-cd84b503fc4d" />
+            <option name="patterns">
+              <list>
+                <InspectionPattern>
+                  <option name="regExp" value="import java\.awt\..+;" />
+                  <option name="_fileType" value="JAVA" />
+                  <option name="searchContext" value="ANY" />
+                </InspectionPattern>
+              </list>
+            </option>
+          </RegExpInspectionConfiguration>
+          <RegExpInspectionConfiguration>
+            <option name="description" value="Use -- or ++ instead." />
+            <option name="name" value="Use -- or ++ instead." />
+            <option name="problemDescriptor" value="Use -- or ++ instead." />
+            <option name="uuid" value="2bd1bce4-e6e7-32d0-9e93-961b0b50697d" />
+            <option name="patterns">
+              <list>
+                <InspectionPattern>
+                  <option name="regExp" value="(\w+)\s*=\s*\1\s*([-+])\s*1" />
+                  <option name="_fileType" value="JAVA" />
+                  <option name="searchContext" value="EXCEPT_COMMENTS_AND_STRING_LITERALS" />
+                  <option name="replacement" value="$1 $2$2" />
+                </InspectionPattern>
+              </list>
+            </option>
+          </RegExpInspectionConfiguration>
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="DeclareCollectionAsInterface" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreLocalVariables" value="false" />
+      <option name="ignorePrivateMethodsAndFields" value="false" />
+    </inspection_tool>
+    <inspection_tool class="IgnoredJUnitTest" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="IllegalDependencyOnInternalPackage" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="InstanceofChain" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreInstanceofOnLibraryClasses" value="false" />
+    </inspection_tool>
+    <inspection_tool class="InstanceofThis" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="JUnit5Converter" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MagicNumber" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MethodOnlyUsedFromInnerClass" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreMethodsAccessedFromAnonymousClass" value="false" />
+      <option name="ignoreStaticMethodsFromNonStaticInnerClass" value="false" />
+      <option name="onlyReportStaticMethods" value="false" />
+    </inspection_tool>
+    <inspection_tool class="MigrateAssertToMatcherAssert" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="OverlyStrongTypeCast" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreInMatchingInstanceof" value="false" />
+    </inspection_tool>
+    <inspection_tool class="QodanaSanity" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="SerializableHasSerialVersionUIDField" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SuperTearDownInFinally" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TestCaseWithConstructor" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TestCaseWithNoTestMethods" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TestInProductSource" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TestMethodWithoutAssertion" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TestOnlyProblems" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="TypeMayBeWeakened" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="useRighthandTypeAsWeakestTypeInAssignments" value="true" />
+      <option name="useParameterizedTypeForCollectionMethods" value="true" />
+      <option name="doNotWeakenToJavaLangObject" value="true" />
+      <option name="onlyWeakentoInterface" value="true" />
+    </inspection_tool>
+    <inspection_tool class="UNCHECKED_WARNING" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="UnstableTypeUsedInSignature" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="fda78df6-e479-358f-b4c4-cd84b503fc4d" enabled="true" level="WARNING" enabled_by_default="true" editorAttributes="WARNING_ATTRIBUTES" />
+  </profile>
+</component>
