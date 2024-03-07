@@ -40,7 +40,7 @@ public class GptBot extends TelegramLongPollingBot {
             } else if (message_text.equals("/start")) {
                 SendMessage sendMessage = new SendMessage();
                 sendMessage.setChatId(chat_id);
-                sendMessage.setText("Hello! Use the /ai command, like this: /ai 2+2. Note that it can only speak English.");
+                sendMessage.setText("Hello! Use the /ai command, like this: /ai 2+2 to talk to me. Note that I can only speak English. Please ask me once per 10s.");
                 try {
                     execute(sendMessage);
                 } catch (TelegramApiException e) {
